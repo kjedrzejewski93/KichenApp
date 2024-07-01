@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register and Login</title>
+  <script src="js/orders.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Załóż konto lub zaloguj się</h1>
+  <div id="message"></div>
+  <form id="authForm">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="button" id="createAccountButton" onclick="register()">Załóż</button>
+    <button type="button" id="loginButton" onclick="login()">Zaloguj</button>
+  </form>
+</div>
+
+<div id="welcomePage" style="display: none;">
+  <div class="header">
+    <h1 id="welcomeMessage"></h1>
+    <button type="button" onclick="logout()">Wyloguj</button>
+  </div>
+  <div id="panel">
+    <h2 id="panelTitle"></h2>
+    <div id="buttonsPanel">
+      <button type="button" id="usersButton" onclick="showAdminButtonsPage()">Administracja</button>
+      <button type="button" onclick="showProducents()" id="ordersToByButton">Dostawy</button>
+      <button type="button">Ryba</button>
+      <button type="button">Ptak</button>
+    </div>
+
+    <button id="backButton" onclick="goBack()" style="display: none;">Powrót</button>
+    <div id="userList" style="display: none;"></div>
+
+    <div id="adminButtonsPage" style="display:none; margin-top: 20px;">
+      <button type="button" onclick="showUsers()" id='usersAdminPage'>Użytkownicy</button>
+      <button type="button" onclick="showSuppliers()" id="suppliersButton">Dostawcy</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="addSupplierForm" style="display: none;">
+  <h2 id="addSuppTitle">Dodaj Dostawcę</h2>
+  <form id="supplierForm">
+    <input type="text" id="supplierName" placeholder="Nazwa dostawcy" required />
+    <button type="button" id="addSuppButton" onclick="addSupplier()">Dodaj Dostawcę</button>
+  </form>
+  <div id="suppliersList">
+    <table id="supplierList">
+      <thead>
+      <tr>
+        <th>Nazwa dostawcy</th>
+        <th>Ilość produktów</th>
+        <th>Akcje</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="suppliersList" style="display: none;">
+  <h2>Dostawcy</h2>
+  <table id="supplierList">
+    <thead>
+    <tr>
+      <th>Nazwa Dostawcy</th>
+      <th>Ilość Produktów</th>
+      <th>Akcja</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+
+<div id="addProductForm" style="display: none;">
+  <h2 id="addProductTitle">Dodaj Produkt</h2>
+  <form id="productForm">
+    <input type="text" id="productName" placeholder="Nazwa produktu" required />
+    <input type="text" id="productUnit" placeholder="Jednostka (szt, kg, litry)" required />
+    <input type="number" id="productPrice" placeholder="Cena" required />
+    <button type="button" onclick="addProduct()">Dodaj Produkt</button>
+    <button id="backButtonProduct" onclick="goBackToSuppliers()">Wróć do dostawców</button>
+  </form>
+  <div id="productList">
+    <table id="productsTable">
+      <thead>
+      <tr>
+        <th>Nazwa produktu</th>
+        <th>Jednostka</th>
+        <th>Akcje</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div id="order" style="display: none;">
+  <h1 id="orderTitle">Zamówienie</h1>
+  <ul id="orderList"></ul>
+  <button type="button" onclick="submitOrder()" id="sendOrder">Wyślij zamówienie</button>
+</div>
+
+<div id="addProductToBuyForm" style="display: none;">
+  <h2 id="addProTitle">Dodaj Produkt</h2>
+<button id="backButtonProduct" onclick="goBackToSuppliers()">Wróć do dostawców</button>
+<table id="productsToBuyTable">
+  <thead>
+  <tr>
+    <th>Nazwa</th>
+    <th>Jednostka</th>
+    <th>Ilość</th>
+    <th>Akcja</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<button id="goToOrder" onclick="goToOrder()">Przejdź do zamówienia</button>
+</div>
+
+
+
+
+<div id="userSuppliers" style="display: none;">
+  <h2>Dostawcy</h2>
+  <div id="supplierListUser"></div>
+  <button id="backButtonUser" onclick="goBackFromUser()">Zawróć</button>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/login.js"></script>
+<script src="js/backButtons.js"></script>
+<script src="js/users.js"></script>
+
+
+</body>
+</html>

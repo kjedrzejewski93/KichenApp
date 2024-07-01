@@ -1,0 +1,15 @@
+    <div id="adminButtonsPage" style="display:none; margin-top: 20px;">
+      <button type="button" onclick="showUsers()" id='usersAdminPage'>Użytkownicy</button>
+      <button type="button" onclick="showSuppliers()" id="suppliersButton">Dostawcy</button>
+    </div>
+
+
+    to ma zniknąć ze stron po za tą, na której się wyświetla
+
+"Twoje zamówienie:" <- nie wyświetla zamówienia + zamówienie nie jest aktualizowane + po 'ok' bład 400 +
+przycisk "Wyślij zamówienie" bez css
+
+
+teraz działamy nad orderami do końca, zweryfikować kod i sprawdzić gdzie problem
+cypress automat
+dodanie możliwości email ?
